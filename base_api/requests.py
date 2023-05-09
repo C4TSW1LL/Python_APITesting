@@ -3,6 +3,5 @@ import requests
 
 class Client:
 
-    def request_method(method: str, url, path, **kwargs):
-        return requests.get(url) #if method.lower() == "get" else requests.post(url)
-        # return requests.request(method, url, **kwargs)
+    def request_method(self, method: str, url,  **kwargs):
+        return requests.request(method, url, **kwargs)

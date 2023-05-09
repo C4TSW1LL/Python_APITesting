@@ -1,8 +1,8 @@
-def dog_schema():
+def dog_schema(msg_type):
     schema = {
         "type": "object",
         "properties": {
-            "message": {"type": "string"},
+            "message": {"type": msg_type},
             "status": {"type": "string"},
         },
         "required": ["message", "status"]
