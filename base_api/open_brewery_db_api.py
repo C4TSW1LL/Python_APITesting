@@ -1,6 +1,6 @@
 import requests
 from jsonschema import validate
-from schemas.dog_schema import dog_schema
+from schemas.open_brewery_schema import open_brewery_schema
 from base_api.requests import Client
 from base_api.model import Model
 
@@ -10,9 +10,9 @@ class Request:
         self.url = url
         self.client = Client()
         self.path = path
-        self.schema = dog_schema(schema_data)
+        self.schema = open_brewery_schema(schema_data)
 
-    def dogApi_GET(self):
+    def open_brewery_GET(self):
         response = self.client.request_method("GET", self.url + self.path)
         validate(instance=response.json(), schema=self.schema)
         return Model(status=response.status_code, response=response.json())
